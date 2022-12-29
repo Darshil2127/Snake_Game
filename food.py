@@ -1,8 +1,18 @@
+from turtle import Turtle
 import random
-class Food():
+class Food(Turtle): #inherit the class
 
     def __init__(self):
-        self.food()
+        super().__init__()
+        self.shape("circle")  #shape is shwoing because you have inherit the turtle class.
+        self.penup()
+        self.shapesize(stretch_len=0.5, stretch_wid=0.5)
+        self.color("blue")
+        self.speed("fastest")
+        self.refresh()
 
-    def food(self):
-        random.randint(1)
+    def refresh(self):
+        random_x = random.randint(-280,280)
+        random_y = random.randint(-280,280)
+
+        self.goto(random_x,random_y)
